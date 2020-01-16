@@ -32,6 +32,6 @@ It also gives an Image for quick start tests.
 * Boot your RPI.
 * modprobe tpm_tis_spi
 
-## Maintener
+## Maintainer
 
 Maintainer: Pierre Fontaine <pierre.ftn@pfontaine.fr>
