@@ -2,6 +2,10 @@
 
 Yocto layer for Letstrust TPM2.0 Module and RaspberryPi.
 
+It allows you to support the SLB9670 TPM2.0 with your RaspberryPi (Tested with RaspberryPi3 B+).
+
+It also gives an Image for quick start tests.
+
 ## Quick links
 
 * Article related to this layer <https://ubs_csse.gitlab.io/secu_os/tutorials/tpm_rpi.html>
