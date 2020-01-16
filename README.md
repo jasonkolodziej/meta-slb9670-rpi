@@ -12,10 +12,10 @@ Yocto layer for Letstrust TPM2.0 Module and RaspberryPi.
 ## Dependencies
 
   URI: <https://github.com/agherzan/meta-raspberrypi.git>
-  branch: <zeus>
+  branch: **zeus**
 
   URI: <git://git.yoctoproject.org/meta-security>
-  branch: <zeus>
+  branch: **zeus**
 
 ## Patches
 
