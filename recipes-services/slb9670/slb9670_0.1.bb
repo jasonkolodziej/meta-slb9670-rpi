@@ -7,7 +7,9 @@ SRC_URI = "file://slb9670-rpi.service"
 
 do_install() {
     install -d ${D}${systemd_system_unitdir}
+    install -d ${D}${sysconfdir}/systemd/system/multi-user.target.wants
     install -m 0644 ${WORKDIR}/slb9670-rpi.service ${D}${systemd_system_unitdir}
+    ln -s ${D}${systemd_system_unitdir}/slb9670-rpi.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants
 }
 
 FILES_${PN} += "${systemd_system_unitdir}/slb9670-rpi.service"
