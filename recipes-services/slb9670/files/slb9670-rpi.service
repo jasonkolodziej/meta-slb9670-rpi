@@ -1,0 +1,9 @@
+[Unit]
+Description=Service Systemd launching TPM communication via modprobe
+
+[Service]
+Type=simple
+ExecStart=modprobe tpm_tis_spi
+
+[Install]
+WantedBy=multi-user.target
