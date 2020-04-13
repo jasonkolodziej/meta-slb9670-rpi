@@ -12,6 +12,7 @@ It also gives an Image for quick start tests.
 * Letstrust website <https://letstrust.de/>
 * Meta Security <https://git.yoctoproject.org/cgit/cgit.cgi/meta-security>
 * Meta RaspberryPi <https://github.com/agherzan/meta-raspberrypi>
+* Patch for U-Boot and Device Tree <https://github.com/joholl/rpi4-uboot-tpm>
 
 ## Dependencies
 
