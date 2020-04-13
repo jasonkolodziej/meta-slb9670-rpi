@@ -2,7 +2,7 @@
 
 Yocto layer for Letstrust TPM2.0 Module and RaspberryPi.
 
-It allows you to support the SLB9670 TPM2.0 with your RaspberryPi (Tested with RaspberryPi3 B+).
+It allows you to support the SLB9670 TPM2.0 with your RaspberryPi (Tested with RaspberryPi4).
 
 It also gives an Image for quick start tests.
 
@@ -30,7 +30,45 @@ It also gives an Image for quick start tests.
 * dd to a SD card the generated sdimg file (use xzcat if rpi-sdimg.xz is used)
 * Plug the TPM Header on the right pins
 * Boot your RPI.
-* modprobe tpm_tis_spi
+
+## U-Boot test
+
+```bash
+U-Boot> tpm2 init
+tpm_tis_spi_probe() SPI TPMv2.0 found (vid:15d1, did:001b, rid:16)
+
+U-Boot> tpm2 startup TPM2_SU_CLEAR
+U-Boot> tpm2 get_capability 0x6 0x106 0x200 2
+Capabilities read from TPM:
+Property 0x00000106: 0x534c4239
+Property 0x00000107: 0x36373000
+```
+
+```python
+python3 -c "print(bytes.fromhex('534c423936373000'))"
+b'SLB9670\x00'
+```
+
+## Tips
+
+Edit your local conf in order to enable U-Boot and support fitImage.
+
+```
+MACHINE ??= "raspberrypi4"
+ENABLE_UART = "1"
+RPI_USE_U_BOOT = "1"
+ENABLE_SPI_BUS = "1"
+RPI_EXTRA_CONFIG = "dtoverlay=letstrust-tpm"
+KERNEL_CLASSES = "kernel-fitimage"
+KERNEL_IMAGETYPE = "fitImage"
+KERNEL_BOOTCMD = "bootm"
+UBOOT_SIGN_ENABLE = "1"
+MACHINE_FEATURES_append = "tpm2"
+DISTRO_FEATURES_append = " systemd tpm2 "
+VIRTUAL-RUNTIME_init_manager = "systemd"
+DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
+VIRTUAL-RUNTIME_initscripts = ""
+```
 
 ## Maintainer
 
