@@ -74,4 +74,5 @@ VIRTUAL-RUNTIME_initscripts = ""
 
 ## Maintainer
 
-Maintainer: Pierre Fontaine <pierre.ftn@pfontaine.fr>
+Original Maintainer: Pierre Fontaine <pierre.ftn@pfontaine.fr>
+Dunfell branch editor: Jason Kolodziej <me@jasonkolodziej>
