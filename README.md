@@ -17,10 +17,10 @@ It also gives an Image for quick start tests.
 ## Dependencies
 
   URI: <https://github.com/agherzan/meta-raspberrypi.git>
-  branch: **zeus**
+  branch: **dunfell**
 
   URI: <git://git.yoctoproject.org/meta-security>
-  branch: **zeus**
+  branch: **dunfell**
 
 ## Quick Start
 
